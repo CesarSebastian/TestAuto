@@ -1,0 +1,22 @@
+{
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+    },
+
+    "env":{
+        "customerName":"Alex Turner",
+        "customerPhone":"5511224433",
+        "customerEmail":"fake@mail.com",
+        "customerPassword":"12345678",
+        "passwordConfirmation":"12345678",
+        "fiscalIdentificationCode":"457812",
+        "shippingName":"Manacar",
+        "shippingAddress":"Av. Insurgentes 4411",
+        "shippingCity":"Ajalvir",
+        "shippingPostalCode":"28864"
+    }
+}
