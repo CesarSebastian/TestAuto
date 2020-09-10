@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 6,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-09-10T04:31:42.881Z",
+    "end": "2020-09-10T04:34:00.145Z",
+    "duration": 137264,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3bc090c1-08b2-4ca8-94f3-89d748c7dfa7",
+      "title": "",
+      "fullFile": "cypress\\integration\\webjugetronica\\index.js",
+      "file": "cypress\\integration\\webjugetronica\\index.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+          "title": "Probando la pagina Juguetronic",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC Inicia Pagina",
+              "fullTitle": "Probando la pagina Juguetronic TC Inicia Pagina",
+              "timedOut": null,
+              "duration": 5841,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.juguetronica.com/');\ncy.get('.row > .align-items-center > .text-center > a > img').should(\"exist\");",
+              "err": {},
+              "uuid": "2205d041-6252-43ef-b873-5338003241a2",
+              "parentUUID": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC LogIn",
+              "fullTitle": "Probando la pagina Juguetronic TC LogIn",
+              "timedOut": null,
+              "duration": 13105,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.col > .d-flex > .pl-3 > a > .fa-user').click().wait(2000); //Usuario No registrado\ncy.get('#cphMain_cLoginEmailTextBox').type(Cypress.env('customerEmail'));\ncy.get('#cphMain_cLoginPasswordTextBox').type(Cypress.env('customerPassword'));\ncy.get('#cphMain_cLoginButton').click().wait(2000);\ncy.xpath('/html/body/form/div[6]/div/div/div/div/div/div/table/tbody/tr/td[2]/div').should('have.text', '\\n\\tNo existe ninguna cuenta que coincida con esta dirección de correo electrónico\\n').wait(2000); //Regreso a página principal\ncy.get('.col > .d-flex > .align-items-center > a > img').click();",
+              "err": {},
+              "uuid": "cad1b1ec-b6bc-4f80-ad6b-4736d7a38a8b",
+              "parentUUID": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC Busqueda",
+              "fullTitle": "Probando la pagina Juguetronic TC Busqueda",
+              "timedOut": null,
+              "duration": 48501,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.juguetronica.com/').wait(2000); //Realiza busqueda por id con Enter\ncy.get('#search').type('Star Wars').type('{enter}'); //Busqueda por texto de la pagina\ncy.contains('Categoría').click();\ncy.contains('Drones').click(); //Se valida que si exista articulo\ncy.get('body > div.mt-4.ee-bg-white > div > div:nth-child(2) > div.col-lg > div > div > div > a > img').should('exist'); //Regreso a página principal\ncy.get('.col > .d-flex > .align-items-center > a > img').click();",
+              "err": {},
+              "uuid": "0c33b6fd-b0a8-4775-8100-f557ec43f4d0",
+              "parentUUID": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC Carrito de Compras",
+              "fullTitle": "Probando la pagina Juguetronic TC Carrito de Compras",
+              "timedOut": null,
+              "duration": 39477,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Codigo sacado de Extension\ncy.get('.col > .d-flex > .pl-3 > a > .fa-shopping-cart').click(); //Validacion de Elemento\ncy.get('body > div.ee-bg-white > div > div > div > h1').should('exist');\ncy.contains('JUGUETES').click();\ncy.get('img[alt=\"LITTLEBITS - SPACE ROVER INVENTOR KIT\"]').click();\ncy.get('#addtoshoppingcart1413861').click();\ncy.get('body > div.ee-bg-white > div > div > div > h1').should('have.text', 'TU COMPRA');\ncy.get('.container > .row > .col > .mt-5 > .btn-default').click();",
+              "err": {},
+              "uuid": "02ca0f67-1c10-43e6-b550-0e59e705b472",
+              "parentUUID": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC Llenar CheckOut",
+              "fullTitle": "Probando la pagina Juguetronic TC Llenar CheckOut",
+              "timedOut": null,
+              "duration": 4528,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Llenar checkout mediante ID y llenado con constantes \ncy.get('#customerName').type(Cypress.env('customerName'));\ncy.get('#customerPhone').type(Cypress.env('customerPhone'));\ncy.get('#customerEmail').type(Cypress.env('customerEmail'));\ncy.get('#customerPassword').type(Cypress.env('customerPassword'));\ncy.get('#passwordConfirmation').type(Cypress.env('passwordConfirmation'));\ncy.get('#fiscalIdentificationCode').type(Cypress.env('fiscalIdentificationCode')); //Datos de Entrega\ncy.get('#shippingName').type(Cypress.env('shippingName'));\ncy.get('#shippingAddress').type(Cypress.env('shippingAddress'));\ncy.get('#shippingCity').type(Cypress.env('shippingCity'));\ncy.get('#shippingPostalCode').type(Cypress.env('shippingPostalCode')); //Terminos y Condiciones \ncy.get('#acceptLegalTerms').click();\ncy.get('.container > .row > .col > form > .btn').click();",
+              "err": {},
+              "uuid": "deb64044-20c7-4c03-b424-9489ab62b9a4",
+              "parentUUID": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC Eliminar Articulo",
+              "fullTitle": "Probando la pagina Juguetronic TC Eliminar Articulo",
+              "timedOut": null,
+              "duration": 13671,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.juguetronica.com/');\ncy.contains('JUGUETES').click();\ncy.get('img[alt=\"LITTLEBITS - SPACE ROVER INVENTOR KIT\"]').click();\ncy.get('#addtoshoppingcart1413861').click(); //Va a carrito de compras\ncy.get('.col > .d-flex > .pl-3 > a > .fa-shopping-cart').click(); //Valida que haya articulo en carrito\ncy.xpath('/html/body/div[4]/div/div/div/div[1]/form/div/a/img').should('exist'); //Da clic en eliminar articulo\ncy.xpath('/html/body/div[4]/div/div/div/div[1]/form/div/button').click(); //Validación que ya no exista imagen\ncy.xpath('/html/body/div[4]/div/div/div/div[1]/form/div/a/img').should('not.exist');",
+              "err": {},
+              "uuid": "b13fbea6-55fa-4881-b57b-246d1dbcb743",
+              "parentUUID": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC Eliminar sin Articulo",
+              "fullTitle": "Probando la pagina Juguetronic TC Eliminar sin Articulo",
+              "timedOut": null,
+              "duration": 8212,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.juguetronica.com/');\ncy.get('.col > .d-flex > .pl-3 > a > .fa-shopping-cart').click();\ncy.xpath('/html/body/div[4]/div/div/div/div[1]/form/div/a/img').should('exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `undefined`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `undefined`, but never found it.\n    at Context.eval (https://www.juguetronica.com/__cypress/tests?p=cypress\\integration\\webjugetronica\\index.js:177:69)",
+                "diff": null
+              },
+              "uuid": "1f87ffb1-4dd1-48e6-8867-e0ef1ec12bc4",
+              "parentUUID": "931ea098-8eab-4cb4-9acc-4c55b793cd20",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2205d041-6252-43ef-b873-5338003241a2",
+            "cad1b1ec-b6bc-4f80-ad6b-4736d7a38a8b",
+            "0c33b6fd-b0a8-4775-8100-f557ec43f4d0",
+            "02ca0f67-1c10-43e6-b550-0e59e705b472",
+            "deb64044-20c7-4c03-b424-9489ab62b9a4",
+            "b13fbea6-55fa-4881-b57b-246d1dbcb743"
+          ],
+          "failures": [
+            "1f87ffb1-4dd1-48e6-8867-e0ef1ec12bc4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 133335,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

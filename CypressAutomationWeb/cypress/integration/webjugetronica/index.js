@@ -166,4 +166,16 @@ describe('Probando la pagina Juguetronic', () => {
 
     })
 
+    it('TC Eliminar sin Articulo', ()=>{
+        cy.visit('https://www.juguetronica.com/')
+
+        cy
+        .get('.col > .d-flex > .pl-3 > a > .fa-shopping-cart')
+        .click()
+
+        cy
+        .xpath('/html/body/div[4]/div/div/div/div[1]/form/div/a/img')
+        .should('exist')
+    })
+
 })
